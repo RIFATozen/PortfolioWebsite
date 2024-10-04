@@ -1,6 +1,6 @@
 "use client";
 
-import { about, experience, education, skills } from "@/public/assets/content";
+import { resume } from "@/public/assets/content";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
@@ -12,6 +12,8 @@ import {
 
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
+
+const { about, education, experience, skills } = resume;
 
 const Resume = () => {
   return (
