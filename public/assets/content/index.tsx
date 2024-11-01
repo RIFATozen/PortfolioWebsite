@@ -5,6 +5,8 @@ import {
   FaReact,
   FaGithub,
   FaLinkedinIn,
+  FaPhoneAlt,
+  FaEnvelope,
 } from "react-icons/fa";
 import {
   SiTailwindcss,
@@ -203,11 +205,24 @@ export const projects = [
     num: "02",
     category: "frontend",
     title: "project 2",
-    description:
-      "A fully responsive modern ui/ux website in react.js",
+    description: "A fully responsive modern ui/ux website in react.js",
     stack: [{ name: "React.js" }, { name: "Css 3" }, { name: "Javascript" }],
     image: "/assets/work/thumb2.png",
     live: "https://rifatozen-gpt3.surge.sh/",
     github: "https://github.com/RIFATozen/gpt3",
+  },
+];
+
+// contact
+export const info = [
+  {
+    icon: <FaPhoneAlt />,
+    title: "Phone",
+    description: "(+90) 538 233 9956",
+  },
+  {
+    icon: <FaEnvelope />,
+    title: "Email",
+    description: "rfatozen1@gmail.com",
   },
 ];
