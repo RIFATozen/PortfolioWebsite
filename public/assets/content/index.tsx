@@ -42,12 +42,21 @@ export const links = [
 
 // Social
 export const socials = [
-  { icon: <FaGithub />, path: "https://github.com/RIFATozen" },
+  {
+    icon: <FaGithub />,
+    path: "https://github.com/RIFATozen",
+    label: "Open my GitHub profile in a new tab",
+  },
   {
     icon: <FaLinkedinIn />,
     path: "https://www.linkedin.com/in/r%C4%B1fat-%C3%B6zen-879536171",
+    label: "Open my LinkedIn profile in a new tab",
   },
-  { icon: <FaXTwitter />, path: "https://x.com/RIFATozn" },
+  {
+    icon: <FaXTwitter />,
+    path: "https://x.com/RIFATozn",
+    label: "Open my X profile in a new tab",
+  },
 ];
 
 // Stats

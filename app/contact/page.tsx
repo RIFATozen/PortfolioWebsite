@@ -26,6 +26,7 @@ const Contact = () => {
         opacity: 1,
         transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
       }}
+      id="maincontent"
       className="py-6"
     >
       <div className="container mx-auto">
@@ -33,7 +34,7 @@ const Contact = () => {
           {/* form */}
           <div className="xl:w-[54%] order-2 xl:order-none">
             <form className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl">
-              <h3 className="text-4xl text-accent">Let's work together</h3>
+              <h1 className="text-4xl text-accent">Let's work together</h1>
               <p className="text-white/60">
                 I’m excited to connect and explore how we can bring your ideas
                 to life. Reach out via email, and let’s make something great
@@ -49,7 +50,7 @@ const Contact = () => {
               {/* select */}
 
               <Select>
-                <SelectTrigger className="w-full">
+                <SelectTrigger className="w-full" aria-label="Choose the service you are interested in">
                   <SelectValue placeholder="Select a service" />
                 </SelectTrigger>
                 <SelectContent>
@@ -82,7 +83,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="text-white/60">{item.title}</p>
-                      <h3 className="text-xl">{item.description}</h3>
+                      <p className="text-xl">{item.description}</p>
                     </div>
                   </li>
                 );

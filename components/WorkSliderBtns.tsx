@@ -15,10 +15,10 @@ const WorkSliderBtns = ({
   const swiper = useSwiper();
   return (
     <div className={containerStyles}>
-      <button className={btnStyles} onClick={() => swiper.slidePrev()}>
+      <button aria-label="Come back to the previous project" className={btnStyles} onClick={() => swiper.slidePrev()}>
         <PiCaretLeftBold />
       </button>
-      <button className={btnStyles} onClick={() => swiper.slideNext()}>
+      <button aria-label="Move on to the next project" className={btnStyles} onClick={() => swiper.slideNext()}>
         <PiCaretRightBold />
       </button>
     </div>

@@ -8,7 +8,10 @@ import { motion } from "framer-motion";
 
 const Services = () => {
   return (
-    <main className="min-h-[80vh] flex flex-col justify-center py-12 xl:py-0">
+    <main
+      id="maincontent"
+      className="min-h-[80vh] flex flex-col justify-center py-12 xl:py-0"
+    >
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0 }}

@@ -32,6 +32,7 @@ const Work = () => {
         opacity: 1,
         transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
       }}
+      id="maincontent"
       className="min-h-[80vh] flex flex-col justify-center py-12 xl:py-0"
     >
       <div className="container mx-auto">
@@ -72,7 +73,14 @@ const Work = () => {
                     >
                       <TooltipProvider delayDuration={100}>
                         <Tooltip>
-                          <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
+                          <TooltipTrigger
+                            aria-label={
+                              index === 0
+                                ? "Open the live project in a new tab"
+                                : "Open the github repository of the project in a new tab"
+                            }
+                            className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group"
+                          >
                             <div className="text-white text-3xl group-hover:text-accent">
                               {index === 0 ? <BsArrowUpRight /> : <BsGithub />}
                             </div>
@@ -101,7 +109,10 @@ const Work = () => {
             >
               {projects.map((project, index) => {
                 return (
-                  <SwiperSlide key={index} className="w-full cursor-grab active:cursor-grabbing">
+                  <SwiperSlide
+                    key={index}
+                    className="w-full cursor-grab active:cursor-grabbing"
+                  >
                     <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
                       {/* overlay */}
                       <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>

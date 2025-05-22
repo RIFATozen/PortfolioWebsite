@@ -14,7 +14,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "RifatOzen.com",
+  title: "Rifat Ozen",
   description: "I develop custom and responsive websites using the latest technologies. I create intuitive interfaces and optimize code for maximum performance and increase your website's visibility on search engines through expert keyword analysis, optimized content, and strategic link building.",
 };
 
