@@ -28,27 +28,36 @@ const Resume = () => {
     >
       <div className="container mx-auto">
         <Tabs
+          role="tablist"
           defaultValue="skills"
           className="flex flex-col xl:flex-row gap-[60px]"
         >
           <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
-            <TabsTrigger value="skills">Skills</TabsTrigger>
-            <TabsTrigger value="experience">Experiences</TabsTrigger>
-            <TabsTrigger value="education">Education</TabsTrigger>
-            <TabsTrigger value="about">About me</TabsTrigger>
+            <TabsTrigger value="skills" role="tab">
+              Skills
+            </TabsTrigger>
+            <TabsTrigger value="experience" role="tab">
+              Experiences
+            </TabsTrigger>
+            <TabsTrigger value="education" role="tab">
+              Education
+            </TabsTrigger>
+            <TabsTrigger value="about" role="tab">
+              About me
+            </TabsTrigger>
           </TabsList>
 
           {/* content */}
           <div className="min-h-[70vh] w-full">
             {/* experience */}
-            <TabsContent value="experience" className="w-full">
+            <TabsContent value="experience" className="w-full" role="tabpanel">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h1 className="text-4xl font-bold">{experience.title}</h1>
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
                   {experience.description}
                 </p>
 
-                <ScrollArea className="h-[400px)">
+                <ScrollArea className="h-[400px]">
                   <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
                     {experience.items.map((item, index) => {
                       return (
@@ -73,7 +82,7 @@ const Resume = () => {
               </div>
             </TabsContent>
             {/* education */}
-            <TabsContent value="education" className="w-full">
+            <TabsContent value="education" className="w-full" role="tabpanel">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h1 className="text-4xl font-bold">{education.title}</h1>
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
@@ -104,8 +113,12 @@ const Resume = () => {
                 </ScrollArea>
               </div>
             </TabsContent>
-            {/* Skiils */}
-            <TabsContent value="skills" className="w-full h-full">
+            {/* Skills */}
+            <TabsContent
+              value="skills"
+              className="w-full h-full"
+              role="tabpanel"
+            >
               <div className="flex flex-col gap-[30px]">
                 <div className="flex flex-col gap-[30px] text-center xl:text-left">
                   <h1 className="text-4xl font-bold">{skills.title}</h1>
@@ -120,7 +133,10 @@ const Resume = () => {
                       <li key={index}>
                         <TooltipProvider delayDuration={100}>
                           <Tooltip>
-                            <TooltipTrigger aria-label={`${skill.name} tooltip`} className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group">
+                            <TooltipTrigger
+                              aria-label={`${skill.name} tooltip`}
+                              className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group"
+                            >
                               <div className="text-6xl group-hover:text-accent transition-all duration-300">
                                 {skill.icon}
                               </div>
@@ -140,6 +156,7 @@ const Resume = () => {
             <TabsContent
               value="about"
               className="w-full text-center xl:text-left"
+              role="tabpanel"
             >
               <div className="flex flex-col gap-[30px]">
                 <h1 className="text-4xl font-bold">{about.title}</h1>
@@ -150,6 +167,7 @@ const Resume = () => {
                   {about.info.map((item, index) => {
                     return (
                       <li
+                        tabIndex={0}
                         key={index}
                         className="flex items-center justify-center xl:justify-start gap-4"
                       >

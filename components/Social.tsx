@@ -18,6 +18,8 @@ const Social = ({
             href={item.path}
             className={iconStyles}
             aria-label={item.label}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             {item.icon}
           </Link>

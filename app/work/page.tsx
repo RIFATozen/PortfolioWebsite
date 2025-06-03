@@ -51,15 +51,9 @@ const Work = () => {
               <p className="text-white/60">{project.description}</p>
               {/* stack */}
               <ul className="flex gap-4">
-                {project.stack.map((item, index) => {
-                  return (
-                    <li key={index} className="text-xl text-accent">
-                      {item.name}
-                      {/* remove the last comma */}
-                      {index !== project.stack.length - 1 && ","}
-                    </li>
-                  );
-                })}
+                <li className="text-xl text-accent">
+                  {project.stack.map((item) => item.name).join(", ")}
+                </li>
               </ul>
               {/* border */}
               <div className="border border-white/20"></div>
@@ -67,34 +61,34 @@ const Work = () => {
               <div className="flex items-center gap-4">
                 {[...Array(2)].map((_, index) => {
                   return (
-                    <Link
-                      key={index}
-                      href={index === 0 ? project.live : project.github}
-                    >
-                      <TooltipProvider delayDuration={100}>
-                        <Tooltip>
-                          <TooltipTrigger
-                            aria-label={
-                              index === 0
-                                ? "Open the live project in a new tab"
-                                : "Open the github repository of the project in a new tab"
-                            }
-                            className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group"
+                    <TooltipProvider key={index} delayDuration={100}>
+                      <Tooltip>
+                        <TooltipTrigger
+                          asChild
+                          aria-label={
+                            index === 0
+                              ? "Open the live project in a new tab"
+                              : "Open the github repository of the project in a new tab"
+                          }
+                          className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group"
+                        >
+                          <Link
+                            href={index === 0 ? project.live : project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
                           >
                             <div className="text-white text-3xl group-hover:text-accent">
                               {index === 0 ? <BsArrowUpRight /> : <BsGithub />}
                             </div>
-                          </TooltipTrigger>
-                          <TooltipContent>
-                            <p>
-                              {index === 0
-                                ? "Live project"
-                                : "Github repository"}
-                            </p>
-                          </TooltipContent>
-                        </Tooltip>
-                      </TooltipProvider>
-                    </Link>
+                          </Link>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>
+                            {index === 0 ? "Live project" : "Github repository"}
+                          </p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
                   );
                 })}
               </div>
@@ -102,6 +96,8 @@ const Work = () => {
           </div>
           <div className="w-full xl:w-[50%]">
             <Swiper
+              role="region"
+              aria-label="Work projects slider"
               spaceBetween={30}
               slidesPerView={1}
               className="xl:h-[520px] mb-12"
@@ -122,7 +118,10 @@ const Work = () => {
                           src={project.image}
                           fill
                           className="object-cover"
-                          alt="projectimage"
+                          alt={
+                            `Screenshot of ${project.description} project` ||
+                            "Project screenshot"
+                          }
                         />
                       </div>
                     </div>

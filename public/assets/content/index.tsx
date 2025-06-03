@@ -134,7 +134,7 @@ export const resume = {
     icon: "/assets/resume/badge.svg",
     title: "My experience",
     description:
-      "Although I don't have so much professional work experience, I have undertaken many personal projects related to software development during my university years. I developed applications using React which helped me gain experience in frontend development. I have also kept my technological knowledge and skills up-to-date by taking online courses.",
+      "While I lack extensive professional experience, I completed numerous personal software projects during university. I built applications using React, gaining solid frontend development experience, and kept my skills current through online courses.",
     items: [
       {
         company: "Freelance",

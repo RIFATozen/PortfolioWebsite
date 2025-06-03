@@ -50,7 +50,10 @@ const Contact = () => {
               {/* select */}
 
               <Select>
-                <SelectTrigger className="w-full" aria-label="Choose the service you are interested in">
+                <SelectTrigger
+                  className="w-full"
+                  aria-label="Choose the service you are interested in"
+                >
                   <SelectValue placeholder="Select a service" />
                 </SelectTrigger>
                 <SelectContent>
@@ -67,7 +70,11 @@ const Contact = () => {
                 placeholder="Type your message here."
               />
               {/* btn */}
-              <Button size="md" className="max-w-40">
+              <Button
+                onClick={(e) => e.preventDefault()}
+                size="md"
+                className="max-w-40"
+              >
                 Send message
               </Button>
             </form>
